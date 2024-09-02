@@ -1,0 +1,72 @@
+# Sistema de Controle de Estoque
+
+## Descrição
+
+Este projeto é um sistema de banco de dados para gerenciar o controle de estoque de uma empresa. O sistema permite armazenar e administrar informações sobre produtos, fornecedores e pedidos de reposição.
+
+## Estrutura do Banco de Dados
+
+O banco de dados `SistemaControleEstoque` inclui as seguintes tabelas:
+
+1. **Fornecedores**: Armazena informações sobre os fornecedores.
+   - `id_fornecedor` (INT, Auto Incremento, Primary Key)
+   - `nome_fornecedor` (VARCHAR(100))
+   - `contato` (VARCHAR(100))
+   - `telefone` (VARCHAR(15))
+
+2. **Produtos**: Armazena informações sobre os produtos disponíveis em estoque.
+   - `id_produto` (INT, Auto Incremento, Primary Key)
+   - `nome_produto` (VARCHAR(100))
+   - `preco` (DECIMAL(10, 2))
+   - `quantidade_em_estoque` (INT)
+   - `id_fornecedor` (INT, Foreign Key)
+
+3. **PedidosReposicao**: Registra os pedidos de reposição de produtos.
+   - `id_pedido` (INT, Auto Incremento, Primary Key)
+   - `id_produto` (INT, Foreign Key)
+   - `quantidade_pedido` (INT)
+   - `data_pedido` (DATE)
+
+## Comandos Utilizados
+
+- `CREATE DATABASE`: Cria o banco de dados.
+- `CREATE TABLE`: Cria tabelas no banco de dados.
+- `INSERT INTO ... VALUES ...`: Insere dados nas tabelas.
+- `SELECT ... JOIN ...`: Consulta e exibe dados das tabelas.
+- `UPDATE ... SET ... WHERE ...`: Atualiza dados nas tabelas.
+- `DELETE FROM ... WHERE ...`: Remove dados das tabelas.
+
+## Operações
+
+### Inserção de Dados
+
+- Adiciona fornecedores, produtos e pedidos de reposição às tabelas.
+
+### Consultas
+
+- Exibe produtos em estoque.
+- Mostra pedidos de reposição realizados.
+- Fornece informações sobre fornecedores.
+
+### Atualização e Deleção de Dados
+
+- Atualiza a quantidade de produtos em estoque.
+- Remove produtos descontinuados e fornecedores inativos.
+
+### Tarefas Adicionais
+
+- Lista produtos com baixa quantidade em estoque.
+- Consulta pedidos realizados em um período específico.
+
+## Entrega
+
+- Um arquivo SQL contendo os comandos necessários para criar o banco de dados, tabelas e manipular os dados.
+- Um relatório com screenshots das consultas realizadas e uma breve explicação de como as operações foram implementadas.
+
+## Contribuições
+
+Para contribuir, faça um fork do repositório e envie suas alterações por meio de um pull request. Para sugestões ou relatórios de problemas, abra uma issue.
+
+## Licença
+
+Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
